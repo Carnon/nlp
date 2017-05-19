@@ -1,0 +1,11 @@
+version: '2'
+services:
+  train_2:
+    image: textcluster:latest
+    working_dir: /root/TextCluster
+    command: [python,-u,main.py,--corpus,'isr_question.txt',--numCluster,'2']
+    environment:
+      - PYTHONUNBUFFERED=0
+    volumes:
+      - ../save:/root/TextCluster/save
+      - ../data:/root/TextCluster/data
